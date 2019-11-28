@@ -1,0 +1,268 @@
+body{
+  margin:0;
+  background-color:#010712;
+  background-image:url(https://static.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  height:100vh;
+}
+.container{
+  width:60%;
+  height:55%;
+  position:relative;
+  perspective: 1000px;
+  left:calc(100% - 80%);
+  top:calc(80% - 57%);
+}
+.card{
+  width:100%;
+  height:100%;
+  position:absolute;
+  transform-style:preserve-3d;
+  transition:transform 1s ease;
+
+}
+.popup{
+  visibility: hidden;
+  width: 30%;
+  height: 60%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  z-index: 999;
+
+}
+ .showpopup {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+.calendar-prev-next{
+	position: inherit;
+z-index: 99;
+margin-top: 15%;
+width: 100%;
+display: inherit;
+}
+.input-prev{
+	float: left;
+    background-color: transparent;
+    border: none;
+    font-size: 1.15rem;
+}
+.input-next{
+	float: right;
+    background-color: transparent;
+    border: none;
+    font-size: 1.15rem;
+}
+.monthnames{
+	text-align: center;
+	color: #232227;
+	font-size: 1.8rem;
+	font-weight:800;
+	margin-top: -3%;
+	width: 96%;
+	font-family: 'Montserrat', sans-serif;
+
+}
+.back, .front{
+  border-radius:6px;
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+}
+.contentfront{
+  width:100%;
+  height:100%;
+  float:left;
+  backface-visibility: hidden;
+  transform-style:preserve-3d;
+
+}
+.contentback{
+  width:100%;
+  height:100%;
+  float:left;
+  transform:translatez(-60px);
+  backface-visibility: hidden;
+  transform-style:preserve-3d;
+
+}
+.back{
+  transform:rotateY(180deg);
+  background-color:#232227;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front{
+  text-transform:uppercase;
+  background-color:#232227;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.date{
+  height:100%;
+  width:35%;
+  float:left;
+  background-color:#E76642;
+  border-radius:0 6px 6px 0;
+  text-align:right;
+	padding: 1% 2%;
+  box-sizing:border-box;
+  transform-style:preserve-3d;
+}
+.datecont{
+  height:100%;
+
+	width: 35%;
+	float: right;
+}
+#date{
+  font-size:50px;
+  color:#ECECE7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+  float:right;
+}
+#day{
+  float:right;
+  font-size:14px;
+  color:#232227;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+}
+#month{
+  float:right;
+  font-size:16px;
+  color:#232227;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+}
+.date i{
+  color:#ECECE7;
+  position:absolute;
+  bottom:10px;
+  right:0;
+}
+.date i:hover{
+  color:#232227;
+  transition:.3s ease;
+}
+.month{
+  height:100%;
+  width:65%;
+	float: left;
+	padding: 20px 20px;
+
+  box-sizing:border-box;
+}
+.month table{
+  width:100%;
+	height: 100%;
+}
+.current-day-date{
+	color: red !important;
+	font-size:25px !important;
+}
+.eventsDateAdd{
+	width: 35%;
+	height: 5%;
+	background-color: #232227;
+	color: white;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border: none;
+	float: left;
+}
+.events{
+	height: 70%;
+  text-align: left;
+}
+.eventsDate{
+	text-align: center;
+	margin-top: 5%;
+	font-size: 1.2rem;
+	color:#232227;
+	font-weight: 600;
+
+}
+.orangeTr{
+  color:#E76642;
+
+	font-size:30px;
+	font-weight:600;
+}
+
+.month > tr.orangeTr{
+	height: 20%;
+}
+.whiteTr{
+  color:#ECECE7;
+	font-size:20px;
+	font-weight:400;
+}
+.whiteTr th:hover{
+  color:#E76642;
+  transition:.3s ease;
+}
+.month tr{
+  height:auto;
+}
+.month th{
+  width:15%;
+
+  font-family: 'Montserrat', sans-serif;
+
+	height: auto;
+}
+
+.flipped{
+  transform:rotateY(-180deg);
+  /*height:400px;
+  width:200px;
+  left:calc(50% - 100px);
+  top:calc(50vh - 200px);*/
+}
+.current-day{
+	color: orange;
+	font-size:20px;
+
+}
+.day{
+	color: white;
+	font-size:20px;
+
+}
+.backcontainer{
+    backface-visibility: hidden;
+  transform-style:preserve-3d;
+  width:calc(100% - 60px);
+  height:calc(100% - 40px);
+  float:left;
+  margin-left:30px;
+  margin-top:20px;
+  border-left:solid red 5px;
+  background-color:red;
+  transform:translatez(-60px) scale();
+}
